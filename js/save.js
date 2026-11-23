@@ -1,15 +1,25 @@
-const STORAGE_KEY = 'rent-a-car-simulasyon-save-v1';
+const STORAGE_KEY = 'rent-a-car-simulasyon-save-v2';
 
-function loadSave() {
+export function loadSave() {
   try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) return JSON.parse(saved);
-  } catch (_) {}
-  return null;
+    const value = localStorage.getItem(STORAGE_KEY);
+    if (!value) return null;
+    const parsed = JSON.parse(value);
+    return parsed && Array.isArray(parsed.vehicles) ? parsed : null;
+  } catch {
+    return null;
+  }
 }
 
-function saveGame(state) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) {}
+export function saveGame(state) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    return true;
+  } catch {
+    return false;
+  }
 }
 
-window.RentSave = { loadSave, saveGame };
+export function clearSave() {
+  try { localStorage.removeItem(STORAGE_KEY); } catch {}
+}

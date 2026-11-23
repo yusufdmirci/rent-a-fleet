@@ -1,21 +1,22 @@
 # Rent a Car Simülasyon
 
-Araç kiralama işletmeni büyüttüğün, binek otomobillerden ağır iş makineleri ve kule vinçlere uzanan araç filosu simülasyonu.
-
-## Hemen dene
-`index.html` dosyasını tarayıcıda açabilir veya depo klasöründe `python3 -m http.server 8080` çalıştırıp `http://localhost:8080` adresine gidebilirsin.
+Türkçe, mobil uyumlu ve tarayıcıda oynanabilir araç kiralama işletme simülasyonu.
 
 ## Oynanış
-- Binek araç, kamyonet, kamyon, otobüs, ekskavatör ve kule vinç
-- Müşteri talepleri ve teklif kabul etme
-- Kiralama geliri, bakiye, gün ve seviye
-- Araç durumu ve bakım
-- Araç satın alma ve filoyu büyütme
-- Mobil uyumlu arayüz
+- Binek otomobil, kamyonet, kamyon, otobüs, ekskavatör ve kule vinç kiralama
+- Teklif kabul etme ve gün sayısına bağlı sözleşme/tahsilat
+- Araç bakımı, durum ve müsaitlik
+- Araç satın alma ve filo büyütme
+- Usta, yönetici ve teslimat şoförü işe alma; maaş/bonus yönetimi
+- Görevler, başarımlar, seviye ve deneyim
+- Otomatik yerel kayıt (`localStorage`)
+- Demo mağazası (yalnızca oyun içi bakiye; gerçek ödeme almaz)
 
-## Android/iOS hazırlığı
-Capacitor yapılandırması ve adım adım yönergeler `RELEASE-CHECKLIST.md` dosyasında. Store açıklama taslağı `STORE-LISTING.md`; gizlilik taslağı `PRIVACY-POLICY.md` içindedir.
+## Hemen oyna
+`index.html` dosyasını tarayıcıda aç. Alternatif olarak kök dizinde `python3 -m http.server 8080` komutunu çalıştırıp `http://localhost:8080` adresine git.
 
-Uygulama kimliği: `com.yusufdmirci.rentacarsimulasyon`
+## Mobil paketleme
+Capacitor ayarları `capacitor.config.json` içinde. `npm install` ve `npm run prepare:web` sonrası native projeleri kendi geliştirme makinenizde ilk kez `npx cap add android` / `npx cap add ios` ile oluşturun. iOS için macOS ve Xcode gerekir. Ayrıntı için `RELEASE-CHECKLIST.md`.
 
-> Bu, oynanabilir prototip ve paketleme iskeletidir; imzalı AAB/IPA değildir. Mağaza yayını için gizlilik beyanları, varlıklar, cihaz testleri, geliştirici hesapları ve imzalama işlemleri tamamlanmalıdır.
+## Sınırlar
+Bu depo prototiptir; şu an mağaza imzalı AAB/IPA üretmez. Gerçek ödeme/billing SDK'sı entegre değildir. Mağaza ürünü satın alma, iade, geri yükleme ve doğrulama akışları olmadan gerçek para tahsil etmeyin. Gerçek IAP için Google Play Billing ve Apple StoreKit/Capacitor uyumlu bir eklenti, mağaza ürün tanımları ve cihaz testleri gerekir. Gizlilik politikasını ve mağaza veri bildirimlerini gerçek son uygulamaya göre tamamlayın.

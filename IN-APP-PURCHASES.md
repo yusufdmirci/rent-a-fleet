@@ -1,17 +1,14 @@
-# Store Privacy and Billing Update
+# Uygulama içi satın alma durumu
 
-- Developer name: Yusuf DEMİRCİ
-- Developer/store contact: kpt.yusufdemirci@gmail.com
-- Support email: rentacarsimulasyondestek@gmail.com
-- In-app purchases: Enabled
-- Android package: com.yusufdmirci.rentacarsimulasyon
-- iOS bundle: com.yusufdmirci.rentacarsimulasyon
+## Şu an
+Oyunda demo mağazası bulunur. Ürünler yalnızca oyun içi sanal bakiye ile alınır. Gerçek para tahsilatı yapılmaz ve ödeme SDK'sı çağrılmaz.
 
-Before publishing:
+## Gerçek IAP için yapılması gerekenler
+- Google Play Billing ve Apple StoreKit'i destekleyen, güncel ve bakımı sürdürülen Capacitor eklentisi seçip native projeye eklemek.
+- Google Play Console ve App Store Connect'te ürün kimliklerini ve fiyatları tanımlamak.
+- Satın alma ve geri yükleme akışları; iptal, iade, hata ve tekrar deneme durumlarını uygulamak.
+- Dijital ürün satın alımlarını ilgili mağazanın ödeme sisteminden geçirmek.
+- Makbuz/işlem doğrulaması, test hesapları, sandbox ve mağaza politika uyumunu tamamlamak.
+- Gizlilik politikası, Google Play Data safety ve Apple App Privacy beyanlarını gerçek SDK davranışına göre güncellemek.
 
-1. Declare all in-app purchase products in Google Play Console and App Store Connect.
-2. Declare payment and purchase processing in privacy/data forms.
-3. Publish the privacy policy URL publicly.
-4. Use sandbox accounts for purchase testing.
-5. Restore purchases, receipt validation, cancellation and refund flows must be defined.
-6. Add support email and developer contact to both store listings.
+Bu depo için mağaza kimlik bilgileri veya imzalama anahtarları yoktur. Bu nedenle gerçek satın alma entegrasyonu ve tahsilat etkinleştirilmemiştir.
