@@ -1,0 +1,11 @@
+{
+  "name": "Rent a Car Simülasyon",
+  "short_name": "Rent a Car",
+  "description": "Araç kiralama şirketini kur, filonu büyüt ve müşterilere araç kirala.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fffaf0",
+  "theme_color": "#10182c",
+  "orientation": "portrait",
+  "icons": []
+}

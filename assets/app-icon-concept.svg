@@ -1,0 +1,9 @@
+<!doctype html>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="110" fill="#10182c"/>
+  <path d="M72 302h368l-35-92c-8-22-27-36-51-36H166c-22 0-42 14-50 35z" fill="#ffb703"/>
+  <path d="M151 201h201l27 74H124z" fill="#bde3f5"/>
+  <circle cx="157" cy="327" r="39" fill="#fffaf0"/><circle cx="157" cy="327" r="19" fill="#10182c"/>
+  <circle cx="355" cy="327" r="39" fill="#fffaf0"/><circle cx="355" cy="327" r="19" fill="#10182c"/>
+  <text x="256" y="435" text-anchor="middle" font-family="Arial,sans-serif" font-size="44" font-weight="900" fill="#fffaf0">RENT</text>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "appId": "com.yusufdmirci.rentacarsimulasyon",
+  "appName": "Rent a Car Simülasyon",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
