@@ -1,7 +1,7 @@
 {
-  "name": "Rent A Fleet",
-  "short_name": "Rent A Fleet",
-  "description": "Araç kiralama işletmesini büyüten işletme simülasyonu",
+  "name": "Rent a Car Simülasyon",
+  "short_name": "Rent a Car",
+  "description": "Araç kiralama işletmeni kur, filonu büyüt ve müşterilere araç kirala.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#fffaf0",

@@ -1,0 +1,21 @@
+{
+  "name": "rent-a-car-simulasyon",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Rent a Car Simülasyon — araç kiralama işletme oyunu",
+  "scripts": {
+    "prepare:web": "node scripts/prepare-web.mjs",
+    "android:sync": "npm run prepare:web && cap sync android",
+    "ios:sync": "npm run prepare:web && cap sync ios",
+    "android:open": "cap open android",
+    "ios:open": "cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3",
+    "@capacitor/ios": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3"
+  }
+}

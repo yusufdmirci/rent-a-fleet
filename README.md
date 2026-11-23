@@ -1,32 +1,21 @@
-# Rent A Fleet
+# Rent a Car Simülasyon
 
-Mobil tarayıcı, masaüstü ve Capacitor tabanlı Android/iOS derlemelerine uygun, oynanabilir araç kiralama işletme simülasyonu prototipi.
+Araç kiralama işletmeni büyüttüğün, binek otomobillerden ağır iş makineleri ve kule vinçlere uzanan araç filosu simülasyonu.
 
-## Çalıştırma
+## Hemen dene
+`index.html` dosyasını tarayıcıda açabilir veya depo klasöründe `python3 -m http.server 8080` çalıştırıp `http://localhost:8080` adresine gidebilirsin.
 
-```bash
-python3 -m http.server 8080
-```
-
-Tarayıcıda `http://localhost:8080` adresini açın.
-
-## Oyuna sahip özellikler
-
+## Oynanış
 - Binek araç, kamyonet, kamyon, otobüs, ekskavatör ve kule vinç
-- Araç bakımı, durum sistemi ve kiralama durumu
-- Müşteri teklifleri ve sözleşmeler
-- Bakiye, gün, seviye ve deneyim sistemi
-- Yeni araç satın alma
-- Günü ilerletme ve kiralama geliri
-- Mobil uyumlu kullanıcı arayüzü
+- Müşteri talepleri ve teklif kabul etme
+- Kiralama geliri, bakiye, gün ve seviye
+- Araç durumu ve bakım
+- Araç satın alma ve filoyu büyütme
+- Mobil uyumlu arayüz
 
-## Store hazırlığı için sonraki adım
+## Android/iOS hazırlığı
+Capacitor yapılandırması ve adım adım yönergeler `RELEASE-CHECKLIST.md` dosyasında. Store açıklama taslağı `STORE-LISTING.md`; gizlilik taslağı `PRIVACY-POLICY.md` içindedir.
 
-Bu prototip, Google Play ve App Store'a dönüştürülmeden önce uygulanması gerekenler:
+Uygulama kimliği: `com.yusufdmirci.rentacarsimulasyon`
 
-1. Capacitor kurulumu
-2. Uygulama kimliği ve imzalama
-3. Kalıcı kayıt sistemi
-4. Gizlilik politikası ve kullanıcı sözleşmesi
-5. Store ekran görüntüleri
-6. Android AAB ve iOS sürümü
+> Bu, oynanabilir prototip ve paketleme iskeletidir; imzalı AAB/IPA değildir. Mağaza yayını için gizlilik beyanları, varlıklar, cihaz testleri, geliştirici hesapları ve imzalama işlemleri tamamlanmalıdır.
