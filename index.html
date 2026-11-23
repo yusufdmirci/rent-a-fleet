@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Rent A Fleet</title>
+  <style>
+    :root { --navy:#10182c; --ink:#18243d; --gold:#ffb703; --cream:#fffaf0; --green:#23b26d; --red:#ef476f; --blue:#1877f2; }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:#eef1f6;color:var(--ink);overflow-x:hidden}
+    button{font:inherit} .app{max-width:1180px;margin:auto;min-height:100vh;background:var(--cream)}
+    header{background:var(--navy);color:white;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900}.brandmark{width:38px;height:38px;border-radius:10px;background:var(--gold);display:grid;place-items:center;color:var(--navy)}
+    .stats{display:flex;gap:8px}.stat{background:#202e4b;border:1px solid #354764;border-radius:10px;padding:7px 10px;font-size:12px}.stat b{display:block;color:white;font-size:15px}
+    main{display:grid;grid-template-columns:1fr 280px;min-height:calc(100vh - 66px)}
+    .game{padding:18px}.panel{background:white;border-radius:16px;box-shadow:0 5px 18px #1b274012;border:1px solid #e8e6df}.map{height:255px;position:relative;overflow:hidden;background:linear-gradient(135deg,#bde3bd,#91c6a1)}
+    .road{position:absolute;background:#516070}.road.main{width:120%;height:32px;left:-10%;top:58%;transform:rotate(-4deg)}.road.side{height:70%;width:28px;left:68%;top:-5%;transform:rotate(12deg)}
+    .building{position:absolute;border-radius:6px 6px 2px 2px;box-shadow:5px 5px 0 #00000014}.b1{width:90px;height:85px;left:6%;top:24%;background:#f2c078}.b2{width:65px;height:55px;left:24%;top:12%;background:#df7d63}.b3{width:115px;height:70px;right:7%;top:20%;background:#80a4a3}.b4{width:50px;height:45px;right:24%;bottom:9%;background:#d8a7a0}
+    .office{position:absolute;left:5%;bottom:4%;width:80px;height:92px;border:3px solid white;border-radius:8px;background:#31577a;color:white;display:grid;place-items:center;text-align:center;font-size:11px;font-weight:800}
+    .garage{position:absolute;right:6%;bottom:5%;width:110px;height:70px;border:4px solid white;border-radius:8px;background:#263956;color:white;display:flex;align-items:center;justify-content:center;font-weight:800}
+    .vehicle{position:absolute;font-size:34px;filter:drop-shadow(2px 4px 2px #0003);transition:.7s}.v1{left:28%;top:52%}.v2{left:54%;top:43%;transform:scaleX(-1)}
+    .tabs{display:flex;gap:8px;margin:14px 0}.tab{border:0;border-radius:999px;padding:9px 14px;background:#ebece8;font-weight:800;cursor:pointer}.tab.active{background:var(--navy);color:white}
+    .fleet{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.vehicle-card{padding:12px;cursor:pointer;border:2px solid transparent}.vehicle-card.selected{border-color:var(--gold)}
+    .card-top{display:flex;justify-content:space-between;align-items:center}.emoji{font-size:37px}.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#edf1f7;font-weight:800}.vehicle-card h3{font-size:14px;margin:8px 0 3px}.vehicle-card p{font-size:11px;margin:3px;color:#697186}.bar{height:6px;background:#e9edf2;border-radius:99px;margin-top:8px;overflow:hidden}.bar i{height:100%;display:block;background:var(--green)}
+    .sidebar{border-left:1px solid #e6e3dc;padding:14px;background:#fffdf8}.sidebar h2{font-size:16px;margin:5px 0 12px}.request{border:1px solid #e7e2d7;border-radius:12px;padding:10px;margin-bottom:9px;background:white}.request-top{display:flex;justify-content:space-between;font-size:12px}.request h3{font-size:13px;margin:7px 0}.request p{font-size:11px;margin:4px 0;color:#6b7180}.accept{width:100%;border:0;border-radius:8px;background:var(--gold);padding:8px;font-weight:900;cursor:pointer;margin-top:7px}.accept:disabled{background:#ddd;cursor:not-allowed;color:#777}
+    .toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,100px);background:var(--navy);color:white;padding:12px 18px;border-radius:10px;z-index:99;transition:.3s;font-weight:800}.toast.show{transform:translate(-50%,0)}
+    .progress-row{display:flex;gap:8px;margin-top:10px}.progress-row button{flex:1;border:0;border-radius:9px;padding:9px;font-weight:800;cursor:pointer}.buy{background:var(--navy)!important;color:white}.repair{background:#e8edf5}.modal-bg{position:fixed;inset:0;background:#10182c99;z-index:50;display:none;place-items:center}.modal-bg.open{display:grid}.modal{background:white;border-radius:18px;padding:20px;width:min(420px,calc(100% - 30px))}.modal h2{margin-top:0}.modal .summary{background:#f4f1e8;border-radius:10px;padding:10px;margin:10px 0}.modal-actions{display:flex;gap:8px}.modal-actions button{flex:1;padding:11px;border:0;border-radius:9px;font-weight:900}.confirm{background:var(--gold)}.cancel{background:#e8e8e8}
+    @media(max-width:800px){main{grid-template-columns:1fr}.sidebar{border-left:0;border-top:1px solid #e6e3dc}.fleet{grid-template-columns:repeat(2,minmax(0,1fr))}.map{height:220px}.stats{gap:4px}.stat{padding:5px 6px}.stat:nth-child(2){display:none}}
+  </style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand"><div class="brandmark">RF</div><div>RENT A FLEET</div></div>
+  <div class="stats">
+    <div class="stat">Bakiye<b id="money">₺125.000</b></div>
+    <div class="stat">Gün<b id="day">1</b></div>
+    <div class="stat">Seviye<b id="level">1</b></div>
+  </div>
+</header>
+<main>
+<section class="game">
+  <div class="map panel">
+    <div class="road main"></div><div class="road side"></div>
+    <div class="building b1"></div><div class="building b2"></div><div class="building b3"></div><div class="building b4"></div>
+    <div class="office">MERKEZ<br>OFİS</div><div class="garage">OTOPARK</div>
+    <div class="vehicle v1" id="mapVehicle1">🚗</div><div class="vehicle v2" id="mapVehicle2">🚚</div>
+  </div>
+  <div class="tabs"><button class="tab active">Filom</button><button class="tab" id="nextDay">Günü İlerle</button></div>
+  <div class="fleet" id="fleet"></div>
+  <div class="progress-row"><button class="repair" id="repairSelected">Bakım Yap · ₺2.000</button><button class="buy" id="buyVehicle">Yeni Araç Satın Al · ₺35.000</button></div>
+</section>
+<aside class="sidebar"><h2>Müşteri Talepleri</h2><div id="requests"></div></aside>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal-bg" id="modal"><div class="modal"><h2 id="modalTitle">Kiralamayı Onayla</h2><div class="summary" id="modalSummary"></div><div class="modal-actions"><button class="cancel" id="cancelModal">İptal</button><button class="confirm" id="confirmRental">Kirala</button></div></div></div>
+<script>
+const types=[
+ {name:'Binek Araç',emoji:'🚗',price:1200,capacity:'5 kişi',buy:35000,icon:'🚗'},
+ {name:'Kamyonet',emoji:'🛻',price:2400,capacity:'1.500 kg',buy:65000,icon:'🛻'},
+ {name:'Kamyon',emoji:'🚚',price:4500,capacity:'12 ton',buy:180000,icon:'🚚'},
+ {name:'Otobüs',emoji:'🚌',price:6500,capacity:'50 yolcu',buy:320000,icon:'🚌'},
+ {name:'Ekskavatör',emoji:'🚜',price:8000,capacity:'Ağır iş',buy:420000,icon:'🚜'},
+ {name:'Kule Vinç',emoji:'🏗️',price:15000,capacity:'120 ton',buy:900000,icon:'🏗️'}
+];
+let state={money:125000,day:1,level:1,xp:0,selected:0,vehicles:[
+ {type:0,status:'Müsait',condition:92,rentals:0},
+ {type:1,status:'Müsait',condition:85,rentals:0},
+ {type:2,status:'Kirada',condition:78,rentals:2}
+],pending:null};
+const customerNames=['Yılmaz İnşaat','Metro Turizm','Hızlı Kargo','Ada Proje','Konak Taksi','Duru Beton','Anadolu Lojistik','Park Otel'];
+function fmt(n){return '₺'+n.toLocaleString('tr-TR')}
+function selectedVehicle(){return state.vehicles[state.selected]}
+function renderFleet(){
+ document.getElementById('fleet').innerHTML=state.vehicles.map((v,i)=>{const t=types[v.type];return `<div class="vehicle-card panel ${i===state.selected?'selected':''}" data-i="${i}"><div class="card-top"><span class="emoji">${t.emoji}</span><span class="tag">${v.status}</span></div><h3>${t.name}</h3><p>${t.capacity}</p><p>Durum: %${v.condition}</p><div class="bar"><i style="width:${v.condition}%"></i></div></div>`}).join('');
+ document.querySelectorAll('.vehicle-card').forEach(el=>el.onclick=()=>{state.selected=+el.dataset.i;renderFleet()});
+ document.getElementById('mapVehicle1').textContent=types[selectedVehicle().type].emoji;
+}
+function renderRequests(){
+ const sample=[];for(let i=0;i<4;i++){
+  const type=(i+state.day)%types.length; const t=types[type]; const days=1+(i+state.day)%4;
+  sample.push({name:customerNames[(i+state.day)%customerNames.length],type,days,reward:t.price*days+(i*350),customer:i%3===0?'Aciliyetli':'Normal'});
+ }
+ document.getElementById('requests').innerHTML=sample.map((r,i)=>{
+  const suitable=state.vehicles.findIndex(v=>v.type===r.type&&v.status==='Müsait');
+  return `<div class="request"><div class="request-top"><span>${r.name}</span><span>${r.customer}</span></div><h3>${types[r.type].emoji} ${types[r.type].name}</h3><p>${r.days} gün · Bakiye onaylı</p><p><b>${fmt(r.reward)}</b></p><button class="accept" data-i="${i}" ${suitable<0?'disabled':''}>${suitable<0?'Uygun araç yok':'Teklifi Kabul Et'}</button></div>`}).join('');
+ document.querySelectorAll('.accept').forEach(b=>b.onclick=()=>openModal(sample[+b.dataset.i]));
+}
+function openModal(r){
+ const idx=state.vehicles.findIndex(v=>v.type===r.type&&v.status==='Müsait');if(idx<0)return;
+ state.pending={request:r,index:idx};document.getElementById('modalSummary').innerHTML=`<b>${r.name}</b><br>${types[r.type].emoji} ${types[r.type].name}<br>${r.days} gün kiralama · <b>${fmt(r.reward)}</b>`;document.getElementById('modal').classList.add('open');
+}
+function closeModal(){document.getElementById('modal').classList.remove('open');state.pending=null}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function update(){document.getElementById('money').textContent=fmt(state.money);document.getElementById('day').textContent=state.day;document.getElementById('level').textContent=state.level;renderFleet();renderRequests()}
+document.getElementById('cancelModal').onclick=closeModal;
+document.getElementById('confirmRental').onclick=()=>{if(!state.pending)return;const p=state.pending,r=p.request,v=state.vehicles[p.index];v.status='Kirada';v.rentals++;state.money+=r.reward;state.xp+=25;if(state.xp>=100){state.level++;state.xp-=100;toast('Seviye yükseldi: '+state.level)}else toast(r.name+' kiralamayı kabul etti');closeModal();update()};
+document.getElementById('repairSelected').onclick=()=>{const v=selectedVehicle();if(state.money<2000)return toast('Bakiyeniz yetersiz');if(v.condition>=100)return toast('Araç zaten bakımlı');state.money-=2000;v.condition=Math.min(100,v.condition+25);toast('Araç bakımdan geçti');update()};
+document.getElementById('buyVehicle').onclick=()=>{if(state.money<35000)return toast('Bakiye yetersiz');state.money-=35000;state.vehicles.push({type:0,status:'Müsait',condition:100,rentals:0});state.selected=state.vehicles.length-1;toast('Yeni binek araç satın alındı');update()};
+document.getElementById('nextDay').onclick=()=>{state.day++;let earned=0;state.vehicles.forEach(v=>{if(v.status==='Kirada'){v.condition=Math.max(20,v.condition-(4+Math.floor(v.rentals/3)));if(Math.random()<.55){v.status='Müsait';earned+=types[v.type].price*2}}});if(earned){state.money+=earned;toast('Kiradan gelen gelir: '+fmt(earned))}else toast(state.day+'. güne geçildi');update()};
+update();
+</script>
+</body>
+</html>
