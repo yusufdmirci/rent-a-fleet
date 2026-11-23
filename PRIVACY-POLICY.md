@@ -1,29 +1,43 @@
 # Gizlilik Politikası — Rent a Car Simülasyon
 
-**Son güncelleme:** 2026-11-23  
-**Yayıncı / veri sorumlusu:** [YASAL ADINIZ / ŞİRKETİNİZ]  
-**İletişim:** [DESTEK E-POSTA ADRESİ]  
-**Politika adresi:** Yayın öncesinde herkese açık, kalıcı bir HTTPS URL'sinde barındırılmalıdır.
+**Son güncelleme:** 23 Kasım 2026
 
-## Kapsam
-Bu politika, Rent a Car Simülasyon mobil uygulamasının mevcut prototip sürümü için hazırlanmış yayın öncesi taslaktır. Oyun; gerçek araç kiralama, ödeme, konum takibi, hesap açma veya kullanıcılar arası iletişim hizmeti sunmaz.
+**Yayıncı / veri sorumlusu:** Yusuf DEMİRCİ
 
-## Toplanan ve kullanılan veriler
-Mevcut prototip kodunda analitik, reklam SDK'sı, hesap sistemi veya sunucu bağlantısı bulunmamaktadır. Oyun ilerlemesi bu sürümde kalıcı olarak kaydedilmez. Uygulama herhangi bir kişisel veriyi geliştiriciye göndermek üzere tasarlanmamıştır.
+**İletişim:** kpt.yusufdemirci@gmail.com
 
-Uygulamaya reklam, analiz, bulut kaydı, ödeme, çökme raporlama veya başka bir üçüncü taraf SDK eklenirse bu bölüm ve mağaza gizlilik/veri güvenliği beyanları yayın öncesinde güncellenmelidir. Üçüncü taraf sağlayıcıların kendi veri uygulamaları da geçerli olabilir.
+**Destek:** rentacarsimulasyondestek@gmail.com
+
+Bu politika Rent a Car Simülasyon adlı uygulamayı kullanan kişiler için hazırlanmıştır.
+
+## Uygulama verileri
+
+Uygulama araç kiralama simülasyonu oynanışına ait ilerlemeyi saklayabilir. Mevcut prototip sürümü sunucuya kişisel veri göndermez. Hesap oluşturma veya gerçek araç kiralama hizmeti sunulmaz.
+
+## Satın alma işlemleri
+
+Uygulama ayrıca uygulama içi satın alma sunar. Satın alma işlemleri Apple veya Google tarafından işlenir. Geliştirici olarak ödeme kartı veya banka bilgilerine erişemeyiz.
+
+İşlem geçmişi ve satın alma doğrulaması için mağaza hesaplarını kullanan Apple veya Google’ın gizlilik politikaları geçerlidir.
+
+## Üçüncü taraflar
+
+Oyuna reklam, analiz, çökme raporu veya ödeme doğrulama SDK'ları eklenirse kullanım öncesinde bu politika güncellenmeli ve mağaza veri güvenliği bildirimleri SDK davranışına göre düzenlenmelidir.
 
 ## Çocukların gizliliği
-Uygulama çocuklara yönelik olarak tasarlanmamıştır. Yaş hedef kitlesi ve mağaza yaş derecelendirmesi yayın öncesinde doğru şekilde belirlenmelidir. Çocuklara yönelik dağıtım planlanıyorsa ilgili mağaza ve mevzuat gereklilikleri ayrıca değerlendirilmelidir.
 
-## Veri güvenliği ve saklama
-Mevcut prototip geliştirici sunucusuna kişisel veri iletmez. Üçüncü taraf hizmetleri veya yerel kayıt eklendiğinde bu bölüm yeniden değerlendirilmelidir.
+Uygulamanın hedef kitlesi ve yaş derecelendirmesi Google Play ve App Store'da yayın öncesinde doğrulanmalıdır. Çocuklara yönelik pazarlama yapılmamalı ve mağaza kurallarına uyulmalıdır.
 
-## Kullanıcı hakları ve iletişim
-Gizlilik soruları için [DESTEK E-POSTA ADRESİ] üzerinden iletişim kurulabilir. Yayıncı, gerçek iletişim ve tüzel kişi bilgilerini yayın öncesinde eklemelidir.
+## Veri güvenliği
 
-## Değişiklikler
-Uygulamanın veri işleme özellikleri değişirse bu politika güncellenecek ve yeni sürüm yayımlanmadan önce kullanıcıların erişimine sunulacaktır.
+Gerçek kişisel veri toplandığında kullanıcı verileri gizli tutulmalı, yetkisiz erişime karşı korunmalı ve saklama süresi asgaride tutulmalıdır.
 
-## Önemli yayın notu
-Bu metin hukuki danışmanlık değildir ve mağaza onayı garantisi vermez. Yayıncı; uygulamanın gerçek SDK/izin davranışını, hedef ülkelerdeki mevzuatı, Google Play Data safety formunu ve Apple App Privacy beyanlarını doğrulamalı; köşeli parantezli alanları doldurmalı ve son politikayı hukuki incelemeden geçirmelidir.
+## Haklar ve iletişim
+
+Gizlilik sorularınız için rentacarsimulasyondestek@gmail.com adresinden bizimle iletişime geçebilirsiniz.
+
+## Politika değişiklikleri
+
+Uygulamanın veri toplama veya satın alma özellikleri değişirse politika güncellenir.
+
+Bu metin hukuki danışmanlık yerine geçmez. Yayın öncesinde gerçek SDK ve mağaza formlarına göre uzman görüşü alınmalıdır.
